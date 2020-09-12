@@ -4,6 +4,7 @@ import com.store.models.Product;
 import com.store.models.requests.ProductRequest;
 import com.store.models.responses.ProductResponse;
 import com.store.services.ProductService;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class ProductController {
     }
 
     @DeleteMapping(value = "/product/{productId}")
-    public ResponseEntity deleteProduct(@PathVariable Long productId) {
+    public ResponseEntity deleteProduct(@ApiParam(value = "productId", example = "434233") @PathVariable Long productId) {
         productService.deleteProduct(productId);
         return new ResponseEntity(HttpStatus.OK);
     }
@@ -43,7 +44,7 @@ public class ProductController {
     }
 
     @GetMapping(value = "/product/{productId}")
-    public ResponseEntity<Product> findProduct(@PathVariable Long productId) {
+    public ResponseEntity<Product> findProduct(@ApiParam(value = "productId", example = "434233") @PathVariable Long productId) {
         Product product = productService.findProduct(productId);
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
