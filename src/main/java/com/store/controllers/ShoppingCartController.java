@@ -4,6 +4,7 @@ import com.store.models.ShoppingCart;
 import com.store.models.requests.ShoppingCartRequest;
 import com.store.models.responses.ShoppingCartResponse;
 import com.store.services.ShoppingCartService;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,13 +32,13 @@ public class ShoppingCartController {
     }
 
     @DeleteMapping(value = "/ShoppingCart/{shoppingCartId}")
-    public ResponseEntity deleteShoppingCart(@PathVariable Long shoppingCartId) {
+    public ResponseEntity deleteShoppingCart(@ApiParam(value = "shoppingCartId", example = "434233") @PathVariable Long shoppingCartId) {
         shoppingCartService.deleteShoppingCart(shoppingCartId);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping(value = "/ShoppingCart/{shoppingCartId}")
-    public ResponseEntity<ShoppingCart> findShoppingCart(@PathVariable Long shoppingCartId) {
+    public ResponseEntity<ShoppingCart> findShoppingCart(@ApiParam(value = "shoppingCartId", example = "434233") @PathVariable Long shoppingCartId) {
         ShoppingCart ShoppingCart = shoppingCartService.findShoppingCart(shoppingCartId);
         return new ResponseEntity<>(ShoppingCart, HttpStatus.OK);
     }

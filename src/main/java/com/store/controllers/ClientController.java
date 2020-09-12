@@ -4,6 +4,7 @@ import com.store.models.Client;
 import com.store.models.requests.ClientRequest;
 import com.store.models.responses.ClientResponse;
 import com.store.services.ClientService;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class ClientController {
     }
 
     @DeleteMapping(value = "/client/{clientId}")
-    public ResponseEntity deleteClient(@PathVariable Long clientId) {
+    public ResponseEntity deleteClient(@ApiParam(value = "clientId", example = "434233") @PathVariable Long clientId) {
         clientService.deleteClient(clientId);
         return new ResponseEntity(HttpStatus.OK);
     }
@@ -43,7 +44,7 @@ public class ClientController {
     }
 
     @GetMapping(value = "/client/{clientId}")
-    public ResponseEntity<Client> findClient(@PathVariable Long clientId) {
+    public ResponseEntity<Client> findClient(@ApiParam(value = "clientId", example = "434233") @PathVariable Long clientId) {
         Client client = clientService.findClient(clientId);
         return new ResponseEntity<>(client, HttpStatus.OK);
     }

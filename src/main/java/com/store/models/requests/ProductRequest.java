@@ -1,6 +1,7 @@
 package com.store.models.requests;
 
 import com.store.models.ProductTypeEnum;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
 
@@ -9,10 +10,19 @@ import java.math.BigDecimal;
  */
 public class ProductRequest {
 
+    @ApiModelProperty(value = "price", example = "15.00")
     private BigDecimal price;
+
+    @ApiModelProperty(value = "name", example = "Pizza now!")
     private String name;
+
+    @ApiModelProperty(value = "barCode", example = "iu123847nmfc90")
     private String barCode;
+
+    @ApiModelProperty(value = "qrCode", example = "jlkfdg9dfgd90889")
     private String qrCode;
+
+    @ApiModelProperty(value = "productType", example = "FOOD")
     private ProductTypeEnum productType;
 
     public ProductRequest(){}

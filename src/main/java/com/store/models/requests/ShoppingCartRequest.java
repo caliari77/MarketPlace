@@ -1,6 +1,8 @@
 package com.store.models.requests;
 
 import com.store.models.Product;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
