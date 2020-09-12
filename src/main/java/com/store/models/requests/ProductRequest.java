@@ -1,29 +1,25 @@
-package com.store.models;
+package com.store.models.requests;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.store.models.ProductTypeEnum;
+
 import java.math.BigDecimal;
 
-@Entity
-public class Product {
+public class ProductRequest {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private long id;
     private BigDecimal price;
     private String name;
     private String barCode;
     private String qrCode;
-    private String productType;
+    private ProductTypeEnum productType;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    public ProductRequest(){};
 
-    public long getId() {
-        return id;
+    public ProductRequest(BigDecimal price, String name, String barCode, String qrCode, ProductTypeEnum productType) {
+        this.price = price;
+        this.name = name;
+        this.barCode = barCode;
+        this.qrCode = qrCode;
+        this.productType = productType;
     }
 
     public BigDecimal getPrice() {
@@ -58,11 +54,7 @@ public class Product {
         this.qrCode = qrCode;
     }
 
-    public String getProductType() {
+    public ProductTypeEnum getProductType() {
         return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
     }
 }
