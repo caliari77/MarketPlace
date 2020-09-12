@@ -29,3 +29,8 @@ After compiling, you need to run the Application.java class to raise the micro s
 The swagger web page can be accessed by the path {host}/marketPlace/swagger-ui.html as soon as the service is up.
 
 For example, a local service has the swagger path localhost:8080/marketPlace/swagger-ui.html.
+
+## Heroku
+I have deployed the service using Heroku. It can be accessed by the url: 
+
+https://caliarichallenge.herokuapp.com/marketPlace/swagger-ui.html#/
