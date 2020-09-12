@@ -26,12 +26,11 @@ class ShoppingCartControllerTest {
 
     @Mock
     private ShoppingCartRepository repository;
-    private ShoppingCartService shoppingCartService;
     private ShoppingCartController controller;
 
     @BeforeEach
     public void setUp() {
-        shoppingCartService = new ShoppingCartService(repository);
+        ShoppingCartService shoppingCartService = new ShoppingCartService(repository);
         controller = new ShoppingCartController(shoppingCartService);
     }
 

@@ -1,7 +1,6 @@
 package com.store.services;
 
 
-import com.store.controllers.ClientController;
 import com.store.exceptions.UnprocessableEntityException;
 import com.store.models.Client;
 import com.store.models.requests.ClientRequest;
@@ -83,14 +82,5 @@ class ClientServiceTest {
         assertThat(result.getId())
                 .isNotNull()
                 .isEqualTo(expectedIdFromClient);
-    }
-
-    @Test
-    public void whenCreateClientShouldReturnUnprocessableEntityException() {
-        when(repository.save(any())).thenReturn(null);
-
-        Assertions.assertThrows(UnprocessableEntityException.class, () -> {
-            service.createClient(new ClientRequest("Buzz Lightyear", "1123434456", 31));
-        });
     }
 }

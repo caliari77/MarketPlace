@@ -1,5 +1,8 @@
 package com.store.models.requests;
 
+/**
+ * POJO that represents all the info that should be received by the respective controller {@link com.store.controllers.ClientController}.
+ */
 public class ClientRequest {
 
     private String name;

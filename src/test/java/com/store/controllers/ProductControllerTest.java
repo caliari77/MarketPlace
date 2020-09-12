@@ -28,12 +28,11 @@ class ProductControllerTest {
 
     @Mock
     private ProductRepository repository;
-    private ProductService productService;
     private ProductController controller;
 
     @BeforeEach
     public void setUp() {
-        productService = new ProductService(repository);
+        ProductService productService = new ProductService(repository);
         controller = new ProductController(productService);
     }
 

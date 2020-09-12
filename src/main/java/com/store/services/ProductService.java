@@ -11,11 +11,13 @@ import org.springframework.stereotype.Service;
 
 import static com.store.Constants.*;
 
-
+/**
+ * This is a service that operates all the hypothetical business cases related the {@link com.store.controllers.ProductController}.
+ */
 @Service
 public class ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
@@ -34,10 +36,6 @@ public class ProductService {
     public Long createProduct(ProductRequest productRequest) {
         ProductMapper mapper = Mappers.getMapper(ProductMapper.class);
         Product persistedProduct = productRepository.save(mapper.productRequestToProduct(productRequest));
-
-        if(persistedProduct == null) {
-            throw new UnprocessableEntityException(CREATE_PRODUCT, CREATE_PRODUCT_FAILURE);
-        }
 
         return persistedProduct.getId();
     }

@@ -6,6 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
+
+/**
+ * POJO that represents the Product model and how It should be mapped into the Database.
+ * Please, note that this is a simplistic example and a real system used by enterprises would
+ * required a bigger and more detailed representation that better fits into the correspondent business case.
+ *
+ */
 @Entity
 public class Product {
 
