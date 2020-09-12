@@ -11,11 +11,13 @@ import org.springframework.stereotype.Service;
 
 import static com.store.Constants.*;
 
-
+/**
+ * This is a service that operates all the hypothetical business cases related the {@link com.store.controllers.ClientController}.
+ */
 @Service
 public class ClientService {
 
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
     public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
@@ -34,10 +36,6 @@ public class ClientService {
     public Long createClient(ClientRequest clientRequest) {
         ClientMapper mapper = Mappers.getMapper(ClientMapper.class);
         Client persistedClient = clientRepository.save(mapper.clientRequestToClient(clientRequest));
-
-        if(persistedClient == null) {
-            throw new UnprocessableEntityException(CREATE_CLIENT, CREATE_CLIENT_FAILURE);
-        }
 
         return persistedClient.getId();
     }

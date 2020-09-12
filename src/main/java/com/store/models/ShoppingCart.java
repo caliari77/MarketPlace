@@ -4,6 +4,12 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * POJO that represents the ShoppingCart model and how It should be mapped into the Database.
+ * Please, note that this is a simplistic example and a real system used by enterprises would
+ * required a bigger and more detailed representation that better fits into the correspondent business case.
+ *
+ */
 @Entity
 public class ShoppingCart {
 

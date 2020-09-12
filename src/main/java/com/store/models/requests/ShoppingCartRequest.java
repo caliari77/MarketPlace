@@ -2,10 +2,12 @@ package com.store.models.requests;
 
 import com.store.models.Product;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * POJO that represents all the info that should be received by the respective controller {@link com.store.controllers.ShoppingCartController}.
+ */
 public class ShoppingCartRequest {
 
     List<Product> products;

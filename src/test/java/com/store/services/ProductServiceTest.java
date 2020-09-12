@@ -85,14 +85,4 @@ class ProductServiceTest {
                 .isNotNull()
                 .isEqualTo(expectedIdFromProduct);
     }
-
-    @Test
-    public void whenCreateProductShouldReturnUnprocessableEntityException() {
-        when(repository.save(any())).thenReturn(null);
-
-        Assertions.assertThrows(UnprocessableEntityException.class, () -> {
-            service.createProduct(
-                    new ProductRequest(new BigDecimal(15.00), "pizza", "qwie12387ashjk3", "1938cjoig56098jklg9823", ProductTypeEnum.FOOD));
-        });
-    }
 }

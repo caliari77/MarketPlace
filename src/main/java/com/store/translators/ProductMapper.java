@@ -6,6 +6,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+/**
+ * This is a simple translator class that uses the auto generated map struct framework to
+ * convert types of POJO's that are related to the {@link Product}.
+ */
 @Mapper
 public interface ProductMapper {
 

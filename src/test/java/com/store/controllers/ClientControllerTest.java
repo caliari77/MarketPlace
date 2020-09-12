@@ -26,12 +26,11 @@ class ClientControllerTest {
 
     @Mock
     private ClientRepository repository;
-    private ClientService clientService;
     private ClientController controller;
 
     @BeforeEach
     public void setUp() {
-        clientService = new ClientService(repository);
+        ClientService clientService = new ClientService(repository);
         controller = new ClientController(clientService);
     }
 

@@ -4,6 +4,9 @@ import com.store.models.ProductTypeEnum;
 
 import java.math.BigDecimal;
 
+/**
+ * POJO that represents all the info that should be received by the respective controller {@link com.store.controllers.ProductController}.
+ */
 public class ProductRequest {
 
     private BigDecimal price;
@@ -12,7 +15,7 @@ public class ProductRequest {
     private String qrCode;
     private ProductTypeEnum productType;
 
-    public ProductRequest(){};
+    public ProductRequest(){}
 
     public ProductRequest(BigDecimal price, String name, String barCode, String qrCode, ProductTypeEnum productType) {
         this.price = price;
