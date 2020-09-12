@@ -1,29 +1,17 @@
-package com.store.models;
+package com.store.models.requests;
+
+import com.store.models.Product;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class ShoppingCart {
+public class ShoppingCartRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
-    @ElementCollection
     List<Product> products;
 
-    public ShoppingCart() {
+    public ShoppingCartRequest() {
         products = new ArrayList<>();
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public List<Product> getProducts() {
