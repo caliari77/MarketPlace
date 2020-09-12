@@ -9,6 +9,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * This is a default swagger configuration that allows It to be used as a automatic documentation framework.
+ * Use the path /marketPlace/swagger-ui.html to check out the web page documentation for the service endpoints.
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -21,3 +25,4 @@ public class SwaggerConfig {
                 .build();
     }
 }
+

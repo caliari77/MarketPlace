@@ -1,5 +1,9 @@
 package com.store;
 
+/**
+ * This class contains all the global constants that are used globally in the service.
+ *
+ */
 public class Constants {
 
     // Listed operations

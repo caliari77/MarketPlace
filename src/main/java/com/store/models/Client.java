@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * POJO that represents the Client model and how It should be mapped into the Database.
+ * Please, note that this is a simplistic example and a real system used by enterprises would
+ * required a bigger and more detailed representation that better fits into the correspondent business case.
+ *
+ */
 @Entity
 public class Client {
 

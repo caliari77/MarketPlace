@@ -70,13 +70,4 @@ class ShoppingCartServiceTest {
                 .isNotNull()
                 .isEqualTo(expectedIdFromShoppingCart);
     }
-
-    @Test
-    public void whenCreateShoppingCartShouldReturnUnprocessableEntityException() {
-        when(repository.save(any())).thenReturn(null);
-
-        Assertions.assertThrows(UnprocessableEntityException.class, () -> {
-            service.createShoppingCart(new ShoppingCartRequest());
-        });
-    }
 }

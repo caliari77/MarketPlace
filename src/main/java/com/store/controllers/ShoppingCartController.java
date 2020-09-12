@@ -10,10 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * This class is responsible for defining all explicit REST calls that can be done that are related to the {@link ShoppingCart}.
+ *
+ */
 @Controller
 public class ShoppingCartController {
 
-    private ShoppingCartService shoppingCartService;
+    private final ShoppingCartService shoppingCartService;
 
     @Autowired
     public ShoppingCartController(ShoppingCartService shoppingCartService) {

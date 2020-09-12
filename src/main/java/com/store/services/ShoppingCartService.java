@@ -12,9 +12,12 @@ import org.springframework.stereotype.Service;
 
 import static com.store.Constants.*;
 
+/**
+ * This is a service that operates all the hypothetical business cases related the {@link com.store.controllers.ShoppingCartController}.
+ */
 @Service
 public class ShoppingCartService {
-    private ShoppingCartRepository shoppingCartRepository;
+    private final ShoppingCartRepository shoppingCartRepository;
 
     @Autowired
     public ShoppingCartService(ShoppingCartRepository shoppingCartRepository) {
@@ -24,10 +27,6 @@ public class ShoppingCartService {
     public Long createShoppingCart(ShoppingCartRequest shoppingCartRequest) {
         ShoppingCartMapper mapper = Mappers.getMapper(ShoppingCartMapper.class);
         ShoppingCart persistedShoppingCart = shoppingCartRepository.save(mapper.shoppingCartRequestToShoppingCart(shoppingCartRequest));
-
-        if(persistedShoppingCart == null) {
-            throw new UnprocessableEntityException(CREATE_SHOPPING_CART, CREATE_SHOPPING_CART_FAILURE);
-        }
 
         return persistedShoppingCart.getId();
     }

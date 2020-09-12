@@ -3,9 +3,12 @@ package com.store.exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+/**
+ * This is custom exception class that should be thrown in any case that would result in a NotFound Http status.
+ */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class NotFoundException extends RuntimeException{
-    private String operation;
+    private final String operation;
 
     public NotFoundException(String operation, String message) {
         super(message);
