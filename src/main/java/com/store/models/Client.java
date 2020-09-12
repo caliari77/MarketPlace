@@ -1,21 +1,25 @@
 package com.store.models;
 
-import java.util.UUID;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Client {
-    private final String id;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    private long id;
     private String name;
     private String documentId;
     private int age;
 
-    public Client(String name, String documentId, int age) {
-        id = UUID.randomUUID().toString();
-        this.documentId = documentId;
-        this.name = name;
-        this.age = age;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 

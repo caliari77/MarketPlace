@@ -1,2 +1,6 @@
 .idea/*
 MarketPlace.iml
+.classpath
+.project
+.settings/
+target/
