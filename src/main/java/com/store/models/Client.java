@@ -1,5 +1,7 @@
 package com.store.models;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +19,14 @@ public class Client {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private long id;
+
+    @ApiModelProperty(value = "name", example = "Daniel")
     private String name;
+
+    @ApiModelProperty(value = "documentId", example = "12345678")
     private String documentId;
+
+    @ApiModelProperty(value = "age", example = "23")
     private int age;
 
     public void setId(long id) {
