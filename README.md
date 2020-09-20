@@ -1,8 +1,7 @@
 # MarketPlace
 
 ## Description
-This is a simple demo service for the BrasilPrev Challenge.  Please, note that this is a simplistic service,
- and a real system used by enterprises would require a bigger and more detailed representation that better fits 
+Please, note that this is a simplistic service, and a real system used by enterprises would require a bigger and more detailed representation that better fits 
  into the correspondent business case. I had to make some choices in order to minimize the costs, make It simple to understand
   and to deliver It under the desired time. As an improvement, I would personally suggest the following todo list for such 
   system thinking in a long term and real case:
@@ -17,7 +16,7 @@ This is a simple demo service for the BrasilPrev Challenge.  Please, note that t
   In case of restating the service, all the before stored data will be lost. Again, this is just a simple demo.
 - Use of environment variables for each environment (e.g. development, testing and production environments).
 
-## How to used
+## How to use
 This a back-end solution made using Java 14, Spring MVC and Maven as main structure. To install and compile all
  the dependencies simply run mvn clean install on the root directory.
  
